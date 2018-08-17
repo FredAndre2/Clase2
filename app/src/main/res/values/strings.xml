@@ -9,6 +9,10 @@
     <string name="Resta">Resta</string>
     <string name="Multiplicacion">Multiplicacion</string>
     <string name="Division">Division</string>
+    <string name="Error1">Ingrese el primer numero</string>
+    <string name="Error2">Ingrese el numero dos</string>
+    <string name="Error3">Elija una operacion</string>
+    <string name="Error4">No se puede dividir entre cero</string>
     <string-array name="opciones">
         <item>@string/Suma</item>
         <item>@string/Resta</item>

@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     //Declaro las variables con las que se van a trabajar
@@ -42,21 +43,28 @@ private String op[];
         opcion = operaciones.getSelectedItemPosition();
         num = Double.parseDouble(n1.getText().toString());
         num2 = Double.parseDouble(n2.getText().toString());
-        switch (opcion){
-            case 0:
-                resultado= Metodos.suma(num,num2);
-                break;
-            case 1:
-                resultado= Metodos.resta(num,num2);
-                break;
-            case 2:
-                resultado= Metodos.multiplicacion(num,num2);
-                break;
-            case 3:
-                resultado= Metodos.division(num,num2);
-                break;
+
+        if (Validar()){
+            switch (opcion){
+                case 0:
+                    resultado= Metodos.suma(num,num2);
+                    break;
+                case 1:
+                    resultado= Metodos.resta(num,num2);
+                    break;
+                case 2:
+                    resultado= Metodos.multiplicacion(num,num2);
+                    break;
+                case 3:
+                    resultado= Metodos.division(num,num2);
+                    break;
+            }
+            res.setText(""+resultado);
         }
-        res.setText(""+resultado);
+        else{
+            Toast.makeText(this,recursos.getString(R.string.Error3),Toast.LENGTH_SHORT).show();
+        }
+
     }
     public void Limpiar(View vista){
         n1.setText("");
@@ -64,5 +72,26 @@ private String op[];
         operaciones.setSelection(0);
         n1.requestFocus();
         res.setText("0");
+    }
+    public boolean Validar(){
+
+        int o = operaciones.getSelectedItemPosition();
+
+        if(n1.getText().toString().isEmpty()){
+            n1.setError(recursos.getString(R.string.Error1));
+            n1.setText("");
+            return false;
+        }
+        if(n2.getText().toString().isEmpty()){
+            n2.setError(recursos.getString(R.string.Error2));
+            n2.setText("");
+            return false;
+        }
+        if(n2.getText().toString()=="0"){
+            n2.setError(recursos.getString(R.string.Error4));
+            n2.setText("");
+            return false;
+        }
+        return true;
     }
 }
