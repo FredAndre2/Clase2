@@ -2,4 +2,14 @@
 <resources>
     <string name="app_name">Clase1</string>
     <string name="Calculadora">Calculator</string>
+    <string name="Numero1">Number1</string>
+    <string name="Numero2">Number2</string>
+    <string name="Calcular">Calculate</string>
+    <string name="Cancelar">Cancel</string>
+    <string name="Suma">Addition</string>
+    <string name="Resta">Subtraction</string>
+    <string name="Multiplicacion">Multiplication</string>
+    <string name="Division">Division</string>
+
+
 </resources>

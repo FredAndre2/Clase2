@@ -36,16 +36,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Numero1"
+                android:hint="@string/Numero1"
                 android:inputType="number" />
 
             <EditText
-                android:id="@+id/editText8"
+                android:id="@+id/Txt_Numero2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Numero2"
+                android:hint="@string/Numero2"
                 android:inputType="number" />
+
+            <Spinner
+                android:id="@+id/Cmb_Opciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/opciones" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -59,7 +65,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorPrimaryDark"
-                    android:text="Calcular"
+                    android:onClick="Calcular"
+                    android:text="@string/Calcular"
                     android:textColor="@android:color/holo_blue_light"
                     android:textStyle="bold" />
 
@@ -70,7 +77,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorPrimaryDark"
-                    android:text="Cancelar"
+                    android:onClick="Limpiar"
+                    android:text="@android:string/cancel"
                     android:textColor="@android:color/holo_blue_light"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -85,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
